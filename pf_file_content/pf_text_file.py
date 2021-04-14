@@ -6,6 +6,6 @@ def get_file_content(path, encoding=None):
         pass
     else:
         with open(path, encoding=encoding) as f:
-            contents = f.readlines()
+            contents = f.read()
             f.close()
             return contents
