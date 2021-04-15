@@ -24,5 +24,10 @@ def delete(path):
         shutil.rmtree(path)
 
 
+def delete_file(path):
+    if is_exist(path):
+        os.remove(path)
+
+
 def rename(source, destination):
     os.rename(source, destination)
