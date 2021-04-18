@@ -15,7 +15,11 @@ def find_replace_into_text(content: str, key_value: dict):
 
 
 def camelcase_to_lower(text: str, to: str = "_"):
-    return re.sub(r'(?<!^)(?=[A-Z])', to, text).lower()
+    return camelcase_to(text, to).lower()
+
+
+def camelcase_to(text: str, to: str = "_"):
+    return re.sub(r'(?<!^)(?=[A-Z])', to, text)
 
 
 def replace_space_with(text: str, to: str = "_"):
