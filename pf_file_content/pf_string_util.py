@@ -28,3 +28,12 @@ def replace_space_with(text: str, to: str = "_"):
 
 def find_and_replace_with(text: str, find: any, replace: any):
     return text.replace(find, replace)
+
+
+def process_file_name(file_name: str):
+    if file_name:
+        file_name = camelcase_to(file_name, "-")
+        file_name = find_and_replace_with(file_name, "_", "-")
+        file_name = replace_space_with(file_name, "-")
+        file_name = file_name.lower()
+    return file_name
