@@ -3,3 +3,14 @@
 == source extension installation
 * Install Mode, Change will not effect: python setup.py install
 * Development Mode, change effect immediately: python setup.py develop
+
+== Publish
+If not installed then run below commands
+```bash
+pip install twine wheel
+```
+
+* python setup.py sdist bdist_wheel
+* twine check dist/*
+* twine upload --repository-url https://test.pypi.org/legacy/ dist/*   # (Test)
+* twine upload dist/*
